@@ -1,5 +1,7 @@
 # SumQuick
 
+#### A GPU is highly recommended for running SumQuick (or any Ollama/AI model), otherwise inference may take quite a while. Compatible GPUs listed at https://github.com/ollama/ollama/blob/main/docs/gpu.md
+
 ## About
 An open-source AI summarization tool that runs locally, using Ollama!
 
