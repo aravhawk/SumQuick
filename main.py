@@ -5,11 +5,13 @@ import requests
 from bs4 import BeautifulSoup
 import math
 
+sq_version = "1.0.1"
+
 model = 'llama3'
 tag = 'latest'
-word_limit = 200
+token_limit = 200
 
-os.system(f'ollama pull {model}:{version}')
+os.system(f'ollama pull {model}:{tag}')
 
 def summarize_article(url, word_limit):
     response = requests.get(url)
@@ -17,7 +19,7 @@ def summarize_article(url, word_limit):
     article_html_content = soup.get_text()
 
     stream = ollama.chat(
-        model=f'{model}:{version}',
+        model=f'{model}:{tag}',
         messages=[
             {
                 'role': 'user',
@@ -51,7 +53,16 @@ def summarize_article(url, word_limit):
 with st.form("summary_form"):
    st.title("SumQuick: Quick Summaries Done Locally")
    url = st.text_input("URL (must include http:// or https://)", key='url')
-   word_limit = st.slider("Word Limit:", min_value=100, max_value=500, value=200, step=50)
+   word_limit = st.slider("Token Limit (a token is usually around 3/4 of a word):", min_value=100, max_value=500, 
+                          value=200, step=50)
    submitted = st.form_submit_button('Summarize!')
    if submitted:
        summarize_article(url, word_limit)
+
+st.markdown(f"""
+<footer style='text-align: center; color: grey; position: fixed;'>
+    <p style='margin: 20px; padding: 10px;'>
+        SumQuick {sq_version} — AI can make mistakes. Check important info.
+    </p>
+</footer>
+""", unsafe_allow_html=True)

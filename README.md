@@ -1,4 +1,10 @@
 # SumQuick
+![License](https://img.shields.io/badge/license-MIT-brightgreen)
+![Version](https://img.shields.io/badge/version-1.0.1-red)
+![Streamlit Version](https://img.shields.io/badge/dynamic/json?url=https://pypi.python.org/pypi/streamlit/json&query=$.info.version&label=streamlit&color=ff69b4)
+![OpenAI Version](https://img.shields.io/badge/dynamic/json?url=https://pypi.python.org/pypi/ollama/json&query=$.info.version&label=ollama&color=9cf)
+![Requests Version](https://img.shields.io/badge/dynamic/json?url=https://pypi.python.org/pypi/requests/json&query=$.info.version&label=requests&color=blue)
+![BeautifulSoup Version](https://img.shields.io/badge/dynamic/json?url=https://pypi.python.org/pypi/beautifulsoup4/json&query=$.info.version&label=beautifulsoup4&color=blueviolet)
 
 #### A GPU is highly recommended for running SumQuick (or any Ollama/AI model), otherwise inference may take quite a while. Compatible GPUs listed at https://github.com/ollama/ollama/blob/main/docs/gpu.md
 
@@ -31,7 +37,7 @@ streamlit run main.py
 - Visit localhost:8501 or 127.0.0.1:8501 in a web browser
 
 #### On another device within the network
-- Visit <host-computer-ip>:8501 in a web browser
+- Visit [host-computer-ip]:8501 in a web browser
 
 ## Tweaks & Using Other Models
 
